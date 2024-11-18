@@ -21,4 +21,31 @@ function redirect($url){
     echo '<script language="javascript">window.location.href ="'.$url.'"</script>';
 }
 
+/**
+ * queries and returns animal record of id passed in
+ * @param Int - the id of the animal you want to get
+ */
+function getAnimalById($animal_id){
+    global $pdo;
+    $stmt = $pdo->prepare("
+        SELECT
+            *
+        FROM
+            animals
+        WHERE
+            animal_id = :animal_id
+    ");
+    $result = $stmt->execute(
+        array(
+            'animal_id' => $animal_id
+        )
+    );
+    if($result){
+        $animal = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $animal['name'];
+    } else {
+        return null;
+    }
+}
+
 ?>
