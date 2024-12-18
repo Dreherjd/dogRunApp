@@ -42,26 +42,11 @@ if (isset($_GET['run_id'])) {
     $animal_result = $stmt->execute();
     $animal = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    function getDateForDatabase(string $date): string
-    {
-        $timestamp = strtotime($date);
-        $date_formated = date('m/d/y - g:ia', $timestamp);
-        return $date_formated;
-    }
+   
 
-    function stripSpaceForPlus(string $string)
-    {
-        return str_replace(' ', '+', $string);
-    }
+   
 
-    function convertBoolToTorF($bool)
-    {
-        if ($bool == 0) {
-            return 'No';
-        } else {
-            return 'Yes';
-        }
-    }
+    
 }
 
 
@@ -126,7 +111,7 @@ if (isset($_GET['run_id'])) {
         <div>
             <fieldset>
                 <label class="form-label mt-4" for="readOnlyInput">Darter?</label>
-                <input class="form-control" id="readOnlyInput" type="text" placeholder="<?php echo convertBoolToTorF($animal['will_dart']) ?>" disabled="">
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="<?php echo convertBoolToTorF($animal['will_dart']) ?>" disabled="" style="<?php echo dynamicRedForImportantFields($animal['will_dart'])?>)">
             </fieldset>
         </div>
     </div>
@@ -134,7 +119,7 @@ if (isset($_GET['run_id'])) {
         <div>
             <fieldset>
                 <label class="form-label mt-4" for="readOnlyInput">Remain Caged?</label>
-                <input class="form-control" id="readOnlyInput" type="text" placeholder="<?php echo convertBoolToTorF($animal['must_remain_caged']) ?>" disabled="" style="background-color:#d9534f;">
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="<?php echo convertBoolToTorF($animal['must_remain_caged']) ?>" disabled="" style="<?php echo dynamicRedForImportantFields($animal['must_remain_caged'])?>)">
             </fieldset>
         </div>
     </div>

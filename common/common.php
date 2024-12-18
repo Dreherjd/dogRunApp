@@ -48,4 +48,33 @@ function getAnimalById($animal_id){
     }
 }
 
+function convertBoolToTorF($bool)
+    {
+        if ($bool == 0) {
+            return 'No';
+        } else {
+            return 'Yes';
+        }
+    }
+
+    function stripSpaceForPlus(string $string)
+    {
+        return str_replace(' ', '+', $string);
+    }
+
+    function getDateForDatabase(string $date): string
+    {
+        $timestamp = strtotime($date);
+        $date_formated = date('m/d/y - g:ia', $timestamp);
+        return $date_formated;
+    }
+
+    function dynamicRedForImportantFields($bool){
+        if(1 == $bool){
+            return "background-color:#d9534f;";
+        } else {
+            return "";
+        }
+    }
+
 ?>

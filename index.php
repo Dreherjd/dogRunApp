@@ -34,12 +34,15 @@ function setUser($user_id) {
     echo $current_user[0];
 }
 
+    # get active runs
     global $pdo;
     $stmt = $pdo->query("
     SELECT
         *
     FROM
         runs
+    WHERE
+        state = 'In Progress'
     ");
     $result = $stmt->execute();
     $runs = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -27,15 +27,10 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav d-flex">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Create a Run</a></li>
-                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Create a Leg</a></li>
-                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Add an Animal</a></li>
-                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Add a User</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Log In</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/admin.php" class="nav-link">Admin</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/animals.php" class="nav-link">Animal Database</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Sign In</a></li>
+                    <li class="nav-item"><a href="<?php echo BASE_URL ?>views/edit-post.php" class="nav-link">Sign Out</a></li>
                 </ul>
             </div>
         </div>
