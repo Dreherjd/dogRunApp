@@ -47,13 +47,13 @@ function setUser($user_id) {
 ?>
 <?php include ("includes/header.php"); ?>
 
-<table class="table table-hover">
+<table class="table table-hover table-bordered table-clickable">
   <thead>
     <tr>
       <th scope="col">Animal</th>
       <th scope="col">Start</th>
       <th scope="col">End</th>
-      <th scope="col">State</th>
+      <th scope="col">Status</th>
       <th scope="col">Start Time</th>
       <th scope="col">End Time</th>
     </tr>
@@ -61,12 +61,12 @@ function setUser($user_id) {
   <tbody>
     <?php foreach($runs as $run) : ?>
     <tr class="table-active">
-      <td scope="row"><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo getAnimalById($run['animal']) ?></a></td>
-      <td scope="row"><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo $run['start_dest'] ?></a></td>
-      <td><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo $run['end_dest'] ?></a></td>
-      <td><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo $run['state'] ?></a></td>
-      <td><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo $run['start_time'] ?></a></td>
-      <td><a href="views/view-run.php?id=<?php echo $run['run_id']?>"><?php echo $run['end_time'] ?></a></td>
+      <td><a href="views/view-run.php?run_id=<?php echo $run['run_id']?>"><?php echo getAnimalById($run['animal']) ?></a></td>
+      <td><?php echo $run['start_dest'] ?></td>
+      <td><?php echo $run['end_dest'] ?></td>
+      <td><?php echo $run['state'] ?></td>
+      <td><?php echo $run['start_time'] ?></td>
+      <td><?php echo $run['end_time'] ?></td>
     </tr>
     <?php endforeach; ?>
     </tbody>
