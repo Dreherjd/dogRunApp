@@ -64,7 +64,7 @@ function setUser($user_id) {
   <tbody>
     <?php foreach($runs as $run) : ?>
     <tr class="table-active">
-      <td><a href="views/view-run.php?run_id=<?php echo $run['run_id']?>"><?php echo getAnimalById($run['animal']) ?></a></td>
+      <td><a href="views/view-run.php?run_id=<?php echo $run['run_id']?>"><?php echo getAnimalNameById($run['animal']) ?></a></td>
       <td><?php echo $run['start_dest'] ?></td>
       <td><?php echo $run['end_dest'] ?></td>
       <td><?php echo $run['state'] ?></td>

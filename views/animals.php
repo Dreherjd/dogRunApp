@@ -34,7 +34,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <tbody>
     <?php foreach($animals as $animal) : ?>
     <tr class="table-active">
-      <td><a href="animal-info.php?animal_id=<?php echo $animal['animal_id']?>"><?php echo $animal['name']?></a></td>
+      <td><a href="view-animal.php?animal_id=<?php echo $animal['animal_id']?>"><?php echo $animal['name']?></a></td>
       <td><?php echo $animal['species'] ?></td>
       <td><?php echo $animal['breed'] ?></td>
       <td><?php echo $animal['gender'] ?></td>

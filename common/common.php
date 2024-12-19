@@ -25,7 +25,7 @@ function redirect($url){
  * queries and returns animal record of id passed in
  * @param Int - the id of the animal you want to get
  */
-function getAnimalById($animal_id){
+function getAnimalNameById($animal_id){
     global $pdo;
     $stmt = $pdo->prepare("
         SELECT
@@ -46,6 +46,31 @@ function getAnimalById($animal_id){
     } else {
         return null;
     }
+}
+
+function getAnimalById($animal_id)
+{
+    global $pdo;
+    $animal = null;
+    if ($animal_id) {
+        $sql = $pdo->prepare("
+            SELECT
+                *
+            FROM
+                animals
+            WHERE
+                animal_id = :id
+        ");
+        $result = $sql->execute(
+            array(
+                'id' => $animal_id
+            )
+        );
+        if($result){
+            $animal = $sql->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+    return $animal;
 }
 
 function convertBoolToTorF($bool)
